@@ -1,0 +1,12 @@
+<h3>Exception information :</h3>
+<p>
+   <b>Message : </b>{{ exception.getMessage() }} (code {{ exception.getCode() }})
+</p>
+{#{ dump(exception) }#} 
+<ul>
+   <li><strong>Fichier : </strong>{{ exception.getFile() }}</li>
+   <li><strong>Ligne : </strong>{{ exception.getLine() }}</li>
+   
+<p>
+   <b>Client IP  : </b>{{ ip }}  
+</p>   

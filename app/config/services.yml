@@ -1,0 +1,13 @@
+#services:
+#    app.exception_listener:
+#        class: AppBundle\EventListener\ExceptionListener
+#        calls:
+#            - [setMailer, ["@mailer"]]
+#            - [setTemplating, ["@templating"]]
+#        tags:
+#            - { name: kernel.event_listener, event: kernel.exception, method: onKernelException }
+services:
+    app.form.registration:
+        class: SecurityUserBundle\Form\RegistrationType
+        tags:
+            - { name: form.type, alias: app_user_registration }

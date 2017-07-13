@@ -1,0 +1,30 @@
+{# empty Twig template #}
+
+</br></br>
+<table>
+    <tr>
+        <td>Mail:  {% if email is defined %}{{email}}{% else %} (vide){% endif %}</td>
+        <td>Tel:  {% if phoneNumber is defined %}{{phoneNumber}}{% else %} (vide) {% endif %}</td>
+    </tr>
+    </br>
+    <tr>
+        <td>Prenom:  {% if firstName is defined %}{{firstName}}{% else %} (vide){% endif %}</td>
+        <td>Nom:  {% if lastName is defined %}{{lastName}}{% else %} (vide){% endif %}</td>
+    </tr>
+    
+    <tr>
+        <td>Message: <b> {% if message is defined %}{{message}}{% else %} (vide){% endif %}</b></td>
+ 
+    </tr>
+    
+    
+</table>
+
+
+
+
+
+
+
+
+ 
