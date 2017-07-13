@@ -1,0 +1,24 @@
+add_rendezvous:
+    path:     /ajouter
+    defaults: { _controller: BackBundle:Rendezvous:add }
+
+edit_rendezvous:
+    path: /modifier/{id}
+    defaults: { _controller: BackBundle:Rendezvous:edit }
+
+show_rendezvous:
+    path: /
+    defaults: { _controller: BackBundle:Rendezvous:show }
+
+delete_rendezvous:
+    path: /supprimer/{id}
+    defaults: { _controller: BackBundle:Rendezvous:delete }
+    
+    
+    
+valider_RDV:
+    path: /valider-RDV/{date}/{type}/{medecinId}/
+    defaults: { _controller: BackBundle:Rendezvous:creerRDV }
+    options:
+        expose: true
+       

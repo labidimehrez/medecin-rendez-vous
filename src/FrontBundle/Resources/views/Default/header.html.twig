@@ -1,0 +1,47 @@
+<div class="container">
+
+    <div id="browserMsg" class="btn btn-danger disabled">
+        <span class="icon-warning"></span>
+        <span>Votre navigateur semble obsolète, pour profiter pleinement de MonDocteur.fr, nous vous recommandons de mettre à jour votre navigateur.</span>
+    </div>
+
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </button>
+
+    <div class="title--main">
+        <a href="index.html">
+      
+            <img srcset="{{ asset('bundles/front/images/commons/identity/logo.png') }}" alt=" ">
+        </a>
+    </div>
+
+
+    <nav class="nav--main" role="navigation">
+        <ul class="nav--user  nav navbar-nav collapse navbar-collapse" id="main-navbar-collapse">
+
+
+  {% if app.user %}
+            <li class="nav--user--connect">
+                <a href="{{path("fos_user_security_logout")}}">
+                    Déconnecter
+                </a>
+            </li>
+   {% else %}
+            <li class="nav--user--connect">
+                <a href="{{path("fos_user_security_login")}}">
+                    Mon compte
+                </a>
+            </li>
+  
+   
+            <li class="nav--user--pro">
+                <a href="{{path("fos_user_registration_register")}}" class="btn btn-primary btn-lg">Vous êtes praticien ?</a>
+            </li>
+   {% endif %}
+        </ul>
+    </nav>
+
+</div>

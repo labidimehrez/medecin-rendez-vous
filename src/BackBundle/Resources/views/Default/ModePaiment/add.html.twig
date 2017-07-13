@@ -1,0 +1,91 @@
+{% extends 'BackBundle:Default:layout.html.twig' %}
+
+
+{% block title %} {% endblock %}
+{% block stylesheets %}    {{ parent() }}   {% endblock %}
+{% block javascript %}{{ parent() }} {% endblock %}
+
+{% block container %}
+
+
+    <section class="content">
+        <div class="row">
+            <!-- left column -->
+
+
+            {% for flash_message in app.session.flashbag.get('success') %}
+                <script type="text/javascript">
+                    $(document).ready(function () {
+                        $("form input[type=text]").val('');
+                    });
+                </script>
+                <div class="col-md-12">
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <div class="alert alert-success alert-dismissible">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                            <h4><i class="icon fa fa-check"></i> {{ 'modal.successajout.entete'|trans  }}</h4>
+                            {{ flash_message }}
+                        </div>
+                    </div>
+                </div>  
+            {% endfor %}
+            <!-- /.box -->
+            {#                                             #}
+            <!--/.col (left) -->
+            <!-- right column -->
+            <div class="col-md-12">
+                <!-- Horizontal Form -->
+                <div class="box box-info">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Ajout de nouveau type de paiment</h3>
+                    </div>
+                    <!-- /.box-header -->
+                    <!-- form start -->
+                    {#<form class="form-horizontal">#}
+                    {{ form_start(form, { 'attr': {'class': 'form-horizontalndar','novalidate': 'novalidate'} }) }}
+                    <div class="box-body">
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-2 control-label required">Type de paiment</label>
+
+                            <div class="col-sm-10">
+                                {#<input type="text" class="form-control" id=" " placeholder=" ">#}
+                                 
+                                   
+                                
+                                {{ form_widget(form.type) }}
+                                <div class="text-red"> {{ form_errors(form.type) }}</div>
+                            </div>
+                        </div>
+
+                    </div>
+                    {{ form_rest(form) }}
+                    <!-- /.box-body -->
+                    <div class="box-footer">
+                        <button type="reset" class="btn btn-default">{{ 'form.btn.reset'|trans  }}</button>
+                        <button type="submit" class="btn btn-info pull-right">{{ 'form.btn.submit'|trans }}</button>
+                    </div>
+                    <!-- /.box-footer -->
+
+                    {{ form_end(form) }}
+                    {#</form>#}
+                </div>
+                <!-- /.box -->
+                <!-- general form elements disabled -->
+
+                <!-- /.box -->
+            </div>
+            <!--/.col (right) -->
+        </div>
+        <!-- /.row -->
+    </section>
+    <!-- /.content -->
+
+
+
+
+
+
+
+
+{% endblock %}

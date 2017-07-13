@@ -1,0 +1,113 @@
+{% extends 'BackBundle:Default:layout.html.twig' %}
+
+
+{% block title %} {% endblock %}
+{% block stylesheets %}    {{ parent() }}   {% endblock %}
+{% block javascript %}{{ parent() }} {% endblock %}
+
+{% block container %}
+    <link rel="stylesheet" href="{{ asset('bundles/back/js/select2/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('bundles/back/js/select2/select2.min.css') }}">
+    <script src="{{ asset('bundles/back/js/select2/select2.min.js') }}"  type="text/javascript"></script>  
+
+
+    <script type="text/javascript">
+        $(function () {
+            // turn the element to select2 select style
+            $('select').select2();
+
+        });
+    </script>
+
+    <section class="content">
+        <div class="row">
+            <!-- left column -->
+
+
+            {% for flash_message in app.session.flashbag.get('success') %}
+                <script type="text/javascript">
+                    $(document).ready(function () {
+                        $("form input[type=text]").val('');
+                    });
+                </script>
+                <div class="col-md-12">
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <div class="alert alert-success alert-dismissible">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                            <h4><i class="icon fa fa-check"></i> {{ 'modal.successmodification.entete'|trans  }}</h4>
+                            {{ flash_message }}
+                        </div>
+                    </div>
+                </div>  
+            {% endfor %}
+            <!-- /.box -->
+            {#                                             #}
+            <!--/.col (left) -->
+            <!-- right column -->
+            <div class="col-md-12">
+                <!-- Horizontal Form -->
+                <div class="box box-info">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Modifier une  specialite</h3>
+                    </div>
+                    <!-- /.box-header -->
+                    <!-- form start -->
+                    {#<form class="form-horizontal">#}
+                    {{ form_start(form, { 'attr': {'class': 'form-horizontalndar','novalidate': 'novalidate'} }) }}
+                     <div class="box-body">
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-2 control-label required">Nom de la specialite</label>
+
+                            <div class="col-sm-10">
+
+
+
+                                {{ form_widget(form.nomSpecialite) }}
+                                <div class="text-red"> {{ form_errors(form.nomSpecialite) }}</div>
+
+
+                            </div>
+
+
+                            </br>  </br>
+                            <label for="inputEmail3" class="col-sm-2 control-label">Image descriptif</label>
+
+                            <div class="col-sm-10">
+
+
+
+
+
+                                {{ form_widget(form.file) }}
+                                <div class="text-red"> {{ form_errors(form.file) }}</div>
+                            </div>
+                              </br>  </br>
+                              
+                            <label for="inputEmail3"    class="col-sm-2 control-label required">Raison des  visites</label>
+                              <div class="col-sm-10">
+                                {{ form_widget(form.raisonvisites) }}
+                                <div class="text-red"> {{ form_errors(form.raisonvisites) }}</div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- /.box -->
+                    <!-- general form elements disabled -->
+
+                    <!-- /.box -->
+                </div>
+                <!--/.col (right) -->
+            </div>
+            <!-- /.row -->
+    </section>
+    <!-- /.content -->
+
+
+
+
+
+
+
+
+{% endblock %}

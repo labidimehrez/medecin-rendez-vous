@@ -1,0 +1,27 @@
+
+
+form:
+    btn:
+        submit: Ajouter
+        modifier: Modifier
+        reset: Annuler  
+listing:
+    lien:
+        ajouter: Ajouter
+        modifier: Modifier
+        supprimer: Supprimer
+modal:
+    successajout:
+        entete: Success!
+        corps: Ajouté avec succés
+    successmodification:
+        entete: Success!
+        corps: Modifié avec succés
+    successdelete:
+        entete: Supprimé!
+        corps: Supprimé avec succés
+
+rdv:
+    success: Votre rendez vous est bien valide car le medecin est disponible
+    echec: Désolé , vous devez consulter la disponiblité de ce medecin d'abord
+    dateinvalid: Désolé , vous devez verifier les horaires de travail

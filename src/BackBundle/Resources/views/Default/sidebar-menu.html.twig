@@ -1,0 +1,181 @@
+ 
+       {% set medecin = false %}  {% set ajouter = false %} 
+       {% set specialite = false %} {% set listing = false %} 
+       {% set modepaiment = false %} 
+        {% set rendezvous = false %} 
+          {% set raisonvisite = false %} 
+          
+          
+{%  if "medecin" in (app.request.attributes.get('_route')) %}  {% set  medecin  = true %}
+    {%  if "add" in (app.request.attributes.get('_route')) %} 
+     {% set  ajouter  = true %}
+    {% else %}  
+          {% set  listing  = true %}
+    {% endif %}      
+{% endif %}  
+
+
+{%  if "specialite" in (app.request.attributes.get('_route')) %}  {% set  specialite  = true %}
+    {%  if "add" in (app.request.attributes.get('_route')) %}  
+      {% set  ajouter  = true %}
+    {% else %}  
+           {% set  listing  = true %}
+    {% endif %}      
+{% endif %}  
+
+
+{%  if "raisonvisite" in (app.request.attributes.get('_route')) %}  {% set  raisonvisite  = true %}
+    {%  if "add" in (app.request.attributes.get('_route')) %}  
+      {% set  ajouter  = true %}
+    {% else %}  
+           {% set  listing  = true %}
+    {% endif %}      
+{% endif %}  
+
+
+
+{%  if "modepaiment" in (app.request.attributes.get('_route')) %}   {% set  modepaiment  = true %}
+    {%  if "add" in (app.request.attributes.get('_route')) %} 
+      {% set  ajouter  = true %}
+    {% else %}  
+           {% set  listing  = true %}
+    {% endif %}      
+{% endif %}  
+
+
+{%  if "rendezvous" in (app.request.attributes.get('_route')) %}   {% set  rendezvous  = true %}
+    {%  if "add" in (app.request.attributes.get('_route')) %} 
+      {% set  ajouter  = true %}
+    {% else %}  
+           {% set  listing  = true %}
+    {% endif %}      
+{% endif %}  
+
+
+
+ <ul class="sidebar-menu">
+                <li class="header">MAIN NAVIGATION</li>
+
+                <li class="treeview{% if modepaiment ==true %} active{% endif %}">
+                    <a href="#">
+                        <i class="fa fa-dashboard"></i> <span>Mode de Paiment</span>
+                        <span class="pull-right-container">
+                                    <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li class="{% if ajouter ==true %} active{% endif %}">
+                            <a href="{{ path('add_modepaiment') }}" >
+                                <i class="fa fa-circle-o"></i> Ajouter des Nouveaux
+                            </a>
+                        </li>
+                      <li class="{% if listing ==true %} active{% endif %}">
+                            <a href="{{ path('show_modepaiment') }}">
+                                <i class="fa fa-circle-o"></i> La liste des Modes
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                  <li class="treeview{% if specialite ==true %} active{% endif %}">
+                    <a href="#">
+                        <i class="fa fa-dashboard"></i> <span>Specialité</span>
+                        <span class="pull-right-container">
+                                    <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                         <li class="{% if ajouter ==true %} active{% endif %}">
+                            <a href="{{ path('add_specialite') }}">
+                                <i class="fa fa-circle-o"></i> Ajouter des nouvelles</br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                Specialités
+                            </a>
+                        </li>
+                       <li class="{% if listing ==true %} active{% endif %}">
+                            <a href="{{ path('show_specialite') }}">
+                                <i class="fa fa-circle-o"></i> La liste des Specialités
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                
+                
+                
+                 <li class="treeview{% if raisonvisite ==true %} active{% endif %}">
+                    <a href="#">
+                        <i class="fa fa-dashboard"></i> <span>Raison  de visite</span>
+                        <span class="pull-right-container">
+                                    <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                         <li class="{% if ajouter ==true %} active{% endif %}">
+                            <a href="{{ path('add_raisonvisite') }}">
+                                <i class="fa fa-circle-o"></i> Ajouter des </br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                nouveaux raison  de visite
+                            </a>
+                        </li>
+                        <li class="{% if listing ==true %} active{% endif %}">
+                            <a href="{{ path('show_raisonvisite') }}">
+                                <i class="fa fa-circle-o"></i> La liste des raisons de visite
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                  <li class="treeview{% if medecin ==true %} active{% endif %}">
+                    <a href="#">
+                        <i class="fa fa-dashboard"></i> <span>Medecins</span>
+                        <span class="pull-right-container">
+                                    <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                         <li class="{% if ajouter ==true %} active{% endif %}">
+                            <a href="{{ path('add_medecin') }}">
+                                <i class="fa fa-circle-o"></i> Ajouter des </br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                nouveaux medecins
+                            </a>
+                        </li>
+                        <li class="{% if listing ==true %} active{% endif %}">
+                            <a href="{{ path('show_medecin') }}">
+                                <i class="fa fa-circle-o"></i> La liste des medecins
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                
+                <li class="treeview{% if rendezvous ==true %} active{% endif %}">
+                    <a href="#">
+                        <i class="fa fa-dashboard"></i> <span>Rendez-Vous</span>
+                        <span class="pull-right-container">
+                                    <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                         <li class="{% if ajouter ==true %} active{% endif %}">
+                            <a href="{{ path('add_rendezvous') }}">
+                                <i class="fa fa-circle-o"></i> Ajouter des </br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                nouveaux Rendez-Vous
+                            </a>
+                        </li>
+                        <li class="{% if listing ==true %} active{% endif %}">
+                            <a href="{{ path('show_rendezvous') }}">
+                                <i class="fa fa-circle-o"></i> La liste des Rendez-Vous
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                
+            </ul>

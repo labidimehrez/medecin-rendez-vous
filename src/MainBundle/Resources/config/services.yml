@@ -1,0 +1,8 @@
+services:
+    app.mailer:
+        class: MainBundle\Services\Mailer
+        calls:
+            - [setMailer, ["@mailer"]]
+            - [setTemplating, ["@templating"]]
+#        tags:
+#            - { name: kernel.event_listener, event: kernel.exception, method: onKernelException }

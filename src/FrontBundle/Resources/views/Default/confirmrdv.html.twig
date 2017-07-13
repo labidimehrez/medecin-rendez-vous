@@ -1,0 +1,191 @@
+ 
+
+
+<html lang="fr"> 
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" /> 
+    <head>
+
+
+
+        <!-- block js -->
+        {#<script src="{{ asset('bundles/front/js/newrelic/newrelic09e1.js') }}"  type="text/javascript"></script>#}
+        <script src="{{ asset('bundles/front/js/jquery/core/1.11.3/jquery-1.11.3.min09e1.js') }}"  type="text/javascript"></script>
+        {#<script type="text/javascript"> document.createElement("picture");</script>
+        <script src="{{ asset('bundles/front/js/picturefill/picturefill.min09e1.js') }}"  type="text/javascript"></script>
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD140ytd2Pz3GMkE1iwvuvMqrOKyW6qIkE&amp;libraries=places"></script>
+#}
+
+
+
+
+   
+        <!-- block css -->
+         <link rel="stylesheet" href="{{ asset('bundles/front/css/public/main09e1.css') }}">
+          <link rel="stylesheet" href="{{ asset('bundles/front/css/public/mainc296.css') }}">
+        <link rel="stylesheet" href="{{ asset('bundles/front/css/custom.css') }}">
+        <!-- css -->
+
+
+        <!-- <script src="assets/js/newrelic/newrelicc296.js?v=v201705232259"></script>  -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+        <title>Confirmation du Rendez-Vous</title>
+        <meta name="description" content="Trouvez rapidement un médecin ou un dentiste près de chez vous et prenez rendez-vous gratuitement en ligne en quelques clics !">
+        <meta name="keywords" content="MonDocteur,médecin connecté,rendez-vous en ligne,trouver un docteur,dentiste paris,ostéopathe paris,généraliste paris,dentiste lyon">
+
+        <meta property="og:title" content="Inscription - MonDocteur - Prenez Rendez-Vous en Ligne avec votre Médecin ou votre Dentiste" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://www.mondocteur.fr/assets/img/commons/identity/logo-picto.png" />
+        <meta property="og:url" content="https://www.mondocteur.fr/inscription.html" />
+
+
+
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+        <meta name="_csrf" content="37e5100d-af7d-4910-aa32-a00ed86de5a0"/>
+        <meta name="_csrf_header" content="X-CSRF-TOKEN"/>
+
+
+        <!--   <link rel="stylesheet" href="assets/css/public/mainc296.css?v=v201705232259" />  -->
+
+
+        <meta name="apple-itunes-app" content="app-id=1231038950">
+
+        <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/assets/css/public/main-ie9.css?v=v201705232259">
+        <script src="/assets/js/ie/placeholders/placeholders.min.js?v=v201705232259"></script>
+        <![endif]-->
+
+        <!--[if lte IE 8]>
+        <script src="/assets/js/ie/html5.js?v=v201705232259"></script>
+        <script src="/assets/js/ie/respond/respond.min.js?v=v201705232259"></script>
+        <script src="/assets/js/ie/no-support.js?v=v201705232259"></script>
+        <![endif]-->
+
+        {#
+        <script src="assets/js/jquery/core/1.11.3/jquery-1.11.3.minc296.js?v=v201705232259"></script>
+        <script type="text/javascript"> document.createElement( "picture" ); </script>
+        <script src="assets/js/picturefill/picturefill.minc296.js?v=v201705232259"></script>
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD140ytd2Pz3GMkE1iwvuvMqrOKyW6qIkE&amp;libraries=places"></script>
+    #}
+
+
+
+
+
+         
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon.png"/>
+        <link rel="apple-touch-icon" sizes="57x57" href="apple-touch-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="apple-touch-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="apple-touch-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="apple-touch-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="apple-touch-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="apple-touch-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="apple-touch-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon-180x180.png">
+        <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="android-chrome-192x192.png" sizes="192x192" >
+        <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96">
+        <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16">
+        <link rel="manifest" href="manifest.json">
+        <link rel="mask-icon" href="safari-pinned-tab.svg" color="#14385d">
+
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+        <meta name="theme-color" content="#32b1d2">
+        <meta name="msapplication-navbutton-color" content="#32b1d2">
+        <meta name="apple-mobile-web-app-status-bar-style" content="#32b1d2">
+
+    </head>
+    <body itemscope="" itemtype="http://schema.org/WebPage" class="page--sign-up">
+
+
+        <!--googleoff: index-->
+        <div id="cookies-eu-banner" class="cookies-banner container" style="display: none;">
+            <div class="cookies-content">
+                En poursuivant votre navigation sur ce site, vous acceptez que des cookies soient utilisés afin d’améliorer votre expérience d’utilisateur et de vous offrir des contenus personnalisés.
+                <a href="pages/charte-donnees-personnelles-et-cookies.html" id="cookies-eu-more">En savoir plus</a>
+            </div>
+            <div class="cookies-decision">
+                <button id="cookies-eu-reject" class="btn btn-default cookies-reject">Refuser</button>
+                <button id="cookies-eu-accept" class="btn btn-validate cookies-accept">Accepter</button>
+            </div>
+        </div>
+        <!--googleon: index-->
+
+
+        <div id="popupContainer" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"></div>
+        <div id="alertContainer" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog--small" role="document">
+                <div class="modal-content">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Fermer"><span aria-hidden="true">&times;</span></button>
+                    <div class="modal-body"></div>
+                    <div class="modal-footer"></div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+        <div id="navbar--main" class="navbar--main navbar navbar-fixed-top"  role="banner">
+            <header class="header--main">
+                {% include 'FrontBundle:Default:header.html.twig' %}
+            </header>
+        </div>
+
+
+
+
+
+    
+
+    <main class="content--main  container-fluid ">
+        <script src="../assets/js/application-publicc296.js?v=v201705232259"></script>
+        <script type="text/javascript">
+//            $(document).ready(function() {
+//                $.App.Contact.init();
+//            });
+        </script>
+
+        <section class="contact__content">
+            <div class="form-contact form-container container" id="contactForm_container">
+                <h1>Confirmation du Rendez-Vous</h1>
+                <p>Vous avez demandé un rendez ({{rdv.type}})  chez</p></br>
+                <p>M/Mme : {{medecin.nom }}  </br><p>Tel :{{medecin.telephone }}</p>
+                <p>à la date :{{rdv.jour}}/{{rdv.mois}}/{{rdv.annee}}   &nbsp;&nbsp;{{rdv.heure}}:{{rdv.minute}} </p></br>
+             
+                <center> 
+                    <a  href="{{ path('front_homepage') }}" class="btn btn-form" value="Annuler"> Annuler</a>  
+                    <a   href="{{ path('front_confirmation_validation_rdv',{'id':rdv.id}) }}" class="btn btn-form btn-primary" value="Envoyer"> Confimer</a> 
+                </center> 
+                    
+            </div>
+        </section>
+           {% include 'FrontBundle:Default:section-contact.html.twig' %}
+    </main>
+    
+   <!-- footer -->     
+
+
+
+
+
+ {% include 'FrontBundle:Default:footer.html.twig' %}
+    </body>
+
+</html>
+
+
+ 

@@ -1,0 +1,17 @@
+security_user_homepage:
+    path:     /
+    defaults: { _controller: SecurityUserBundle:Default:index }
+
+
+
+specialiterouting:
+    resource: "@SecurityUserBundle/Resources/config/routing/specialite.yml"
+    prefix: /specialite/
+
+raisonvisiterouting:
+    resource: "@SecurityUserBundle/Resources/config/routing/raisonvisite.yml"
+    prefix: /raison-visite/
+
+medecinrouting:
+    resource: "@SecurityUserBundle/Resources/config/routing/medecin.yml"
+    prefix: /medecin/

@@ -1,0 +1,28 @@
+front_homepage:
+    path:     /
+    defaults: { _controller: FrontBundle:Front:index }
+
+front_contactus:
+    path:     /contactez-nous
+    defaults: { _controller: FrontBundle:Front:contactus }
+
+front_prendre_rdv_listing:
+    path:     /prendre-rendez-vous
+    defaults: { _controller: FrontBundle:Front:prendreRDVlisting }
+
+front_choisir_rdv:
+    path:     /choisir-rendez-vous/{id}
+    defaults: { _controller: FrontBundle:Front:choisirRDV }
+    
+front_je_prends_rdv:
+    path:     /je-prends-rendez-vous/{id}
+    defaults: { _controller: FrontBundle:Front:jeprendsRDV }
+
+
+front_valider_rdv:
+    path:     /valider/je-valide-mon-rendez-vous/{id}
+    defaults: { _controller: FrontBundle:Front:valider }
+
+front_confirmation_validation_rdv:
+    path:     /valider/mon-rendez-vous-confirme/{id}
+    defaults: { _controller: FrontBundle:Front:confirmerRDV }

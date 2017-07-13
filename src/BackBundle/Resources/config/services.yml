@@ -1,0 +1,8 @@
+services:
+    rendez.vous.validator:
+        class: %rendez.vous.validator.class%
+        arguments: [@doctrine.orm.entity_manager ]
+        
+        
+parameters:
+    rendez.vous.validator.class: BackBundle\Services\RendezVousValidator

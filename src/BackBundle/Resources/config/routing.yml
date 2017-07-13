@@ -1,0 +1,12 @@
+back_homepage:
+    path:     /
+    defaults: { _controller: BackBundle:Back:index }
+
+
+modepaimentrouting:
+    resource: "@BackBundle/Resources/config/routing/modepaiment.yml"
+    prefix: /mode-paiment/
+
+rendezvousrouting:
+    resource: "@BackBundle/Resources/config/routing/rendezvous.yml"
+    prefix: /rendez-vous/

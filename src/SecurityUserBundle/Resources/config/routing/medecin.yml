@@ -1,0 +1,15 @@
+add_medecin:
+    path:     /ajouter
+    defaults: { _controller: SecurityUserBundle:Medecin:add }
+
+edit_medecin:
+    path: /modifier/{id}
+    defaults: { _controller: SecurityUserBundle:Medecin:edit }
+
+show_medecin:
+    path: /
+    defaults: { _controller: SecurityUserBundle:Medecin:show }
+
+delete_medecin:
+    path: /supprimer/{id}
+    defaults: { _controller: SecurityUserBundle:Medecin:delete }

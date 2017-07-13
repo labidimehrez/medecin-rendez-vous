@@ -1,0 +1,15 @@
+add_modepaiment:
+    path:     /ajouter
+    defaults: { _controller: BackBundle:Modepaiment:add }
+
+edit_modepaiment:
+    path: /modifier/{id}
+    defaults: { _controller: BackBundle:Modepaiment:edit }
+
+show_modepaiment:
+    path: /
+    defaults: { _controller: BackBundle:Modepaiment:show }
+
+delete_modepaiment:
+    path: /supprimer/{id}
+    defaults: { _controller: BackBundle:Modepaiment:delete }

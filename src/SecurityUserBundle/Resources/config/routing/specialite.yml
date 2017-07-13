@@ -1,0 +1,15 @@
+add_specialite:
+    path:     /ajouter
+    defaults: { _controller: SecurityUserBundle:Specialite:add }
+
+edit_specialite:
+    path: /modifier/{id}
+    defaults: { _controller: SecurityUserBundle:Specialite:edit }
+
+show_specialite:
+    path: /
+    defaults: { _controller: SecurityUserBundle:Specialite:show }
+
+delete_specialite:
+    path: /supprimer/{id}
+    defaults: { _controller: SecurityUserBundle:Specialite:delete }

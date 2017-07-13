@@ -1,0 +1,126 @@
+{% extends 'BackBundle:Default:layout.html.twig' %}
+
+
+{% block title %} {% endblock %}
+{% block stylesheets %}
+
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('bundles/back/js/datatables/dataTables.bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ asset('bundles/back/css/custom-table-style.css') }}">
+
+
+{% endblock %}
+{% block javascript %}
+
+
+    {{ parent() }}
+
+
+{% endblock %}
+
+{% block container %}
+
+
+    <section class="content">
+        <div class="row">
+            {% for flash_message in app.session.flashbag.get('delete') %}
+
+                <div class="col-md-12">
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <div class="alert alert-success alert-dismissible">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                            <h4><i class="icon fa fa-check"></i> {{ 'modal.successdelete.entete'|trans }}</h4>
+                            {{ flash_message }}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            <!--/.col (left) -->
+            <!-- right column -->
+            <div class="col-md-12">
+                <div class="box box-info">
+                    <div class="box-header">
+                        <h3 class="box-title">Liste des Medecins </h3>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <table id="example1" class="table table-bordered table-striped">
+                            <thead>
+                            <tr>
+                                <th>Nom</th>
+
+                                <th>Adresse</th>
+                                <th>Telephone</th>
+                                <th>Email</th>
+                                <th>Specialite</th>
+                                <th>Tarif</th>
+                                <th>Mode de paiment</th>
+
+                                <th class="col-md-1">Actions</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+
+
+                            {% for medecin    in medecins %}
+                                <tr>
+                                    <td>{{ medecin.nom }}</td>
+                                    <td>{{ medecin.adresse }}</td>
+                                    <td>{{ medecin.telephone }}</td>
+                                    <td>{{ medecin.email }}</td>
+
+                                    <td>
+                                        {% if  medecin.Specialite is not null %}
+                                            {{ medecin.Specialite.nomSpecialite }}
+                                        {% else %}
+                                        {% endif %}
+                                    </td>
+                                    <td>{{ medecin.tarif }}{{ money }}</td>
+                                    <td>
+                                        {% for modepaiment     in medecin.modepaiments %}
+                                        - {{  modepaiment.type }}</br>
+                                        {% endfor %}
+                                    </td>
+                                    <td class="col-md-1">
+                                        <a href="{{ path('edit_medecin',{'id':medecin.id}) }}" id="style" type="button"
+                                           class="btn btn-block btn-warning">{{ 'listing.lien.modifier'|trans }}</a>
+                                        <a href="{{ path('delete_medecin',{'id':medecin.id}) }}" id="style"
+                                           type="button" class="btn btn-block btn-danger">{{ 'listing.lien.supprimer'|trans }}</a>
+
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                            <tfoot>
+                            <tr>
+                                <th>Nom</th>
+
+                                <th>Adresse</th>
+                                <th>Telephone</th>
+                                <th>Email</th>
+                                <th>Specialite</th>
+                                <th>Tarif</th>
+                                <th>Mode de paiment</th>
+
+                                <th class="col-md-1">Actions</th>
+                            </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+{% endblock %}
