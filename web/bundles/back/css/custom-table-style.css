@@ -1,0 +1,13 @@
+/**
+ * @author Mehrez Labidi <contact.mehrezlabidi@gmail.com> 20-05-2017
+ */
+
+
+table   tr   td  a#style {
+   // width: 49%; 
+    //margin-top: 0px!important;  
+    display: inline-block!important;
+}
+ div.box{
+ 	min-height: 570px!important;
+ }
